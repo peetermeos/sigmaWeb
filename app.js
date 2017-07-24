@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(path.join(__dirname + '/public/javascript')));
 app.use('/img', express.static(path.join(__dirname + '/public/images')));
 app.use('/css', express.static(path.join(__dirname + '/public/stylesheets')));
+app.use('/fonts', express.static(path.join(__dirname + '/public/fonts')));
 
 app.use('/', index);
 app.use('/users', users);

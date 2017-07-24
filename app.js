@@ -14,13 +14,16 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Uncomment this if you need to add javascript access
+app.use('/js', express.static(path.join(__dirname + '/public/javascript')));
+app.use('/img', express.static(path.join(__dirname + '/public/images')));
+app.use('/css', express.static(path.join(__dirname + '/public/stylesheets')));
 
 app.use('/', index);
 app.use('/users', users);
